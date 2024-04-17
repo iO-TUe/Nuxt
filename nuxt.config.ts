@@ -1,5 +1,7 @@
+const path = require('path')
+
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
   css: ['~/assets/main.css'],
-  ssr: true,
+  ssr: true
 })
