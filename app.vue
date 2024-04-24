@@ -1,3 +1,7 @@
+<script setup lang="ts">
+import Header from '../vue/src/components/header.vue'
+</script>
+
 <template>
     <div class="App">
         <Header />
