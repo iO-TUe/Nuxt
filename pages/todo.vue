@@ -5,10 +5,10 @@ import Item from '../../vue/src/components/item.vue'
 let id = 0
 const items = ref<{ id: number; text: string }[]>([])
 
-function addItem({target}: KeyboardEvent) {
-    if ((target as HTMLInputElement).value) {
-        items.value.push({ id: id++, text: (target as HTMLInputElement).value });
-        (target as HTMLInputElement).value = ""
+function addItem({ target }: KeyboardEvent) {
+    if ((<HTMLInputElement>target).value) {
+        items.value.push({ id: id++, text: (<HTMLInputElement>target).value });
+        (<HTMLInputElement>target).value = ""
     }
 }
 
@@ -21,7 +21,7 @@ function removeItem(rid: number) {
     <section id="todo">
         <label>
             <h2>Add new item</h2>
-            <input  id="input" @keyup.enter="addItem" />
+            <input id="input" @keyup.enter="addItem" />
         </label>
         <ul class="list">
             <Item v-for="item in items" :key="item.id" :item="item" :remove="removeItem" />
